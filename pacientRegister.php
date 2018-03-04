@@ -5,12 +5,16 @@ require 'pacientHandler.php';
 if($_SERVER['REQUEST_METHOD']== POST){
 
 $json=file_get_contents('php://input');
-$registro=json_decode($json,true);
+print json_encode(array(
+			"success" => true,
+			"mensaje" => "Registro Completado"
+			);
+/*$registro=json_decode($json,true);
 
 
 /*$usuario = $_POST['usuario'];
 $email=$_POST['email'];
-$password = $_POST['password']; */
+$password = $_POST['password']; /
 $usuario= $registro['usuario'];
 $correo= $registro['email'];
 $password= $registro['password'];
@@ -40,7 +44,7 @@ if($usuario==null | $correo==null | $password==null){
 			));
 
 }
-
+*/
 }  
 
 
