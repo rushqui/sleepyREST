@@ -1,8 +1,8 @@
 <?php 
-define("HOSTNAME", "mysql.hostinger.mx");
-define("DATABASE","u803810551_bazar");
-define("USERNAME", "u803810551_elias");
-define("PASSWORD","bAYO0fF6W2PbANveRO");
+define("HOSTNAME", "localhost");
+define("DATABASE","sleepy_db");
+define("USERNAME", "root");
+define("PASSWORD","supernegro27");
  ?>
 
 
