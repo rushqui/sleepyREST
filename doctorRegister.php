@@ -1,6 +1,6 @@
 <?php 
 header('Content-Type: application/json');
-require 'pacientHandler.php';
+require 'doctorHandler.php';
 
 if($_SERVER['REQUEST_METHOD']== POST){
 
@@ -11,16 +11,10 @@ $registro=json_decode($json,true);
 /*$usuario = $_POST['usuario'];
 $email=$_POST['email'];
 $password = $_POST['password']; */
-$nombre= $registro['usuario'];
-$correo= $registro['email'];
+$correo= $registro['correo'];
 $password= $registro['password'];
-$fechaNacimiento= $registro['fechaNacimiento'];
-$edad= $registro['edad'];
-$sexo= $registro['sexo'];
-$direccion= $registro['direccion'];
-$celular= $registro['celular'];
 
-$insert_user=Paciente::insertPacient($nombre,$correo,$password,$fechaNacimiento,$edad,$sexo,$direccion,$celular);
+$insert_doctor=Doctor::insertPacient($correo,$password);
 
 if($insert_user){
 	print json_encode(array(
