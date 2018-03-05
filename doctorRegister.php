@@ -14,7 +14,7 @@ $password = $_POST['password']; */
 $correo= $registro['correo'];
 $password= $registro['password'];
 
-$insert_doctor=Doctor::insertPacient($correo,$password);
+$insert_doctor=Doctor::insertDoctor($correo,$password);
 
 if($insert_user){
 	print json_encode(array(

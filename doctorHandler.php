@@ -18,7 +18,7 @@ class Doctor
 	}
 
 
-	public static function insertDoctor($nombre, $correo, $password,$fechaNacimiento, $edad, $sexo, $direccion, $celular)
+	public static function insertDoctor($correo,$password)
 	{
 		$Query= "INSERT INTO  Doctores(correo,password) VALUES (?,?)"; 
 		$sentencia=Database::getInstance()->getDb()->prepare($Query);
@@ -32,7 +32,7 @@ class Doctor
 
 public static function getUserByEmail($email_search)
 	{
-      $query="SELECT id,correo,password FROM usuarios_table WHERE correo=?";
+      $query="SELECT id,correo,password FROM Doctores WHERE correo=?";
       try{
       	$sentence=Database::getInstance()->getDb()->prepare($query);
         $sentence->bindParam(1,$email_search,PDO::PARAM_STR,50);
