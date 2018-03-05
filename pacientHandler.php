@@ -18,7 +18,7 @@ class Paciente
 	}
 
 
-	public static function insertPacient($nombre, $correo, $password,$fechaNacimiento, $edad, $sexo, $direccion, $celular)
+	public static function insertPacient($nombre,$correo,$password,$fechaNacimiento,$edad,$sexo,$direccion,$celular)
 	{
 		$Query= "INSERT INTO  Pacientes(nombre,correo,password,fechaNacimiento,edad,sexo,direccion,celular) VALUES (?,?,?,?,?,?,?,?)"; 
 		$sentencia=Database::getInstance()->getDb()->prepare($Query);
