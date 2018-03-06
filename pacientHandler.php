@@ -25,7 +25,7 @@ class Paciente
 		$sentencia->bindParam(1,$nombre,PDO::PARAM_STR,100);
 		$sentencia->bindParam(2,$correo,PDO::PARAM_STR,30);
 		$sentencia->bindParam(3,$password,PDO::PARAM_STR,30);
-		$sentencia->bindParam(4,strtotime($fechaNacimiento),PDO::PARAM_STR);
+		$sentencia->bindParam(4,date("Y-m-d", strtotime($fechaNacimiento)),PDO::PARAM_STR);
 		$sentencia->bindParam(5,$edad,PDO::PARAM_INT);
 		$sentencia->bindParam(6,$sexo,PDO::PARAM_STR,10);
 		$sentencia->bindParam(7,$direccion,PDO::PARAM_STR,200);
